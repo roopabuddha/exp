@@ -132,6 +132,24 @@ $(document).ready(function() {
             (n.className += t + "touch");
       })(window, document);
     </script>
+    <script type="text/javascript">
+  WebFont.load({
+    google: {
+      families: ["Manrope:regular,500,600,700,800", "Manrope:300,regular"],
+    },
+  });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var mobileMenuButton = document.querySelector('.mobile-menu-button');
+    var navMenu = document.querySelector('.nav-menu');
+
+    if (mobileMenuButton && navMenu) {
+      mobileMenuButton.addEventListener('click', function () {
+        navMenu.classList.toggle('w--open');
+      });
+    }
+  });
+</script>
     <link
       href="../uploads-ssl.webflow.com/6398782764d52c1795d6da00/63b27ffc1504f963a40f5916_citadel-logo-32.png"
       rel="shortcut icon"
