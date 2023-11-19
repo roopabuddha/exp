@@ -150,6 +150,21 @@ $(document).ready(function() {
     }
   });
 </script>
+    document.addEventListener('DOMContentLoaded', function () {
+  var mobileMenuButton = document.querySelector('.mobile-menu-button');
+  var navMenu = document.querySelector('.nav-menu');
+
+  console.log('Mobile Menu Button:', mobileMenuButton);
+  console.log('Nav Menu:', navMenu);
+
+  if (mobileMenuButton && navMenu) {
+    mobileMenuButton.addEventListener('click', function () {
+      console.log('Button Clicked');
+      navMenu.classList.toggle('w--open');
+    });
+  }
+});
+
     <link
       href="../uploads-ssl.webflow.com/6398782764d52c1795d6da00/63b27ffc1504f963a40f5916_citadel-logo-32.png"
       rel="shortcut icon"
