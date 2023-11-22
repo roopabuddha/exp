@@ -47,37 +47,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- <script>
-$(document).ready(function() {
-  let currentSlide = 0;
-  const slides = $('.slide-');
-  const dots = $('.slider-dot');
-
-  function showSlide(slideIndex) {
-    slides.hide();
-    slides.eq(slideIndex).show();
-    dots.removeClass('active');
-    dots.eq(slideIndex).addClass('active');
-  }
-
-  function nextSlide() {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-  }
-
-  function startAutoSlide() {
-    setInterval(nextSlide, 5000); // Auto-slide every 5 seconds
-  }
-
-  dots.on('click', function() {
-    currentSlide = $(this).data('slide-');
-    showSlide(currentSlide);
-  });
-
-  showSlide(currentSlide);
-  startAutoSlide();
-});
-
-
     <script
       src="../ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"
       type="text/javascript"
@@ -363,13 +332,6 @@ a {
   .mobile-nav-menu-hidden {
     display: none;
   }
-        /* Slider container */
-.slider-container {
-    width: 100%;
-    overflow: hidden;
-}
-
-/* Slide */
 .slide- {
     display: none; /* Hide slides initially */
     width: 100%;
