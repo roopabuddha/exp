@@ -443,61 +443,152 @@ a {
     cursor: pointer; 
 }*/
 </style>
+
+    <style>
+        /* Slider container */
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Slide */
+.slide- {
+    display: none; /* Hide slides initially */
+    width: 100%;
+    text-align: center;
+}
+
+/* Show the first slide */
+.slide-:first-child {
+    display: block;
+}
+
+/* Navigation dots */
+.slider-nav {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.slider-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: grey;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.slider-dot.active {
+    background-color: black; /* Active dot style */
+}
+.slider-dot:hover {
+    background-color: rgb(235, 155, 155); /* Change color on hover */
+}
+
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide-');
+    const dots = document.querySelectorAll('.slider-dot');
+
+    function showSlide(index) {
+        slides.forEach((slide, idx) => {
+            slide.style.display = idx === index ? 'block' : 'none';
+        });
+        updateDots(index);
+    }
+
+    function updateDots(index) {
+        dots.forEach((dot, idx) => {
+            if (idx === index) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }
+
+    // Update to use data-slide attribute
+    dots.forEach((dot) => {
+        dot.addEventListener('click', () => {
+            const index = parseInt(dot.getAttribute('data-slide'));
+            showSlide(index);
+        });
+
+        dot.addEventListener('touchstart', () => {
+            const index = parseInt(dot.getAttribute('data-slide'));
+            showSlide(index);
+        });
+    });
+
+    // Initialize the first slide
+    showSlide(currentSlide);
+});
+
+    </script>
     <div class="section margin-top-60px">
-  <div class="container">
-    <div class="slider-container">
-      <div class="slider-">
-        <div class="slide-">
-          <img src="s1.webp" alt="Slide 1">
-          <div class="slide-content-">
-            <h2>Live News Headline 1</h2>
-            <p>Here is some live news content for the first slide.</p>
-          </div>
-        </div>
-        <div class="slide-">
-          <img src="s1.webp" alt="Slide 2">
-          <div class="slide-content-">
-            <h2>Live News Headline 2</h2>
-            <p>Here is some live news content for the second slide.</p>
-          </div>
-        </div>
-        <div class="slide-">
-          <img src="s1.webp" alt="Slide 3">
-          <div class="slide-content-         ">
-            <h2>Live News Headline 3</h2>
-            <p>Here is some live news content for the third slide.</p>
-          </div>
-        </div>
-        <div class="slide-">
-          <img src="s1.webp" alt="Slide 4">
-          <div class="slide-content-">
-            <h2>Live News Headline 4</h2>
-            <p>Here is some live news content for the second slide.</p>
-          </div>
-        </div>
-        <div class="slide-">
-          <img src="s1.webp" alt="Slide 5">
-          <div class="slide-content-">
-            <h2>Live News Headline 5</h2>
-            <p>Here is some live news content for the second slide.</p>
-          </div>
-        </div>
-        <div class="slide-">
-          <img src="s1.webp" alt="Slide 6">
-          <div class="slide-content-">
-            <h2>Live News Headline 6</h2>
-            <p>Here is some live news content for the second slide.</p>
+        <div class="container">
+          <div class="slider-container">
+            <div class="slider-">
+              <div class="slide-">
+                <img src="" alt="Slide 1">
+                <div class="slide-content-">
+                  <h2>Live News Headline 1</h2>
+                  <p>Here is some live news content for the first slide.</p>
+                </div>
+              </div>
+              <div class="slide-">
+                <img src="s1.webp" alt="Slide 2">
+                <div class="slide-content-">
+                  <h2>Live News Headline 2</h2>
+                  <p>Here is some live news content for the second slide.</p>
+                </div>
+              </div>
+              <div class="slide-">
+                <img src="s1.webp" alt="Slide 3">
+                <div class="slide-content-         ">
+                  <h2>Live News Headline 3</h2>
+                  <p>Here is some live news content for the third slide.</p>
+                </div>
+              </div>
+              <div class="slide-">
+                <img src="s1.webp" alt="Slide 4">
+                <div class="slide-content-">
+                  <h2>Live News Headline 4</h2>
+                  <p>Here is some live news content for the second slide.</p>
+                </div>
+              </div>
+              <div class="slide-">
+                <img src="s1.webp" alt="Slide 5">
+                <div class="slide-content-">
+                  <h2>Live News Headline 5</h2>
+                  <p>Here is some live news content for the second slide.</p>
+                </div>
+              </div>
+              <div class="slide-">
+                <img src="s1.webp" alt="Slide 6">
+                <div class="slide-content-">
+                  <h2>Live News Headline 6</h2>
+                  <p>Here is some live news content for the second slide.</p>
+                </div>
+              </div>
+            </div>
+            <div class="slider-nav">
+              <div class="slider-dot" data-slide="0"></div>
+              <div class="slider-dot" data-slide="1"></div>
+              <div class="slider-dot" data-slide="2"></div>
+              <div class="slider-dot" data-slide="3"></div>
+              <div class="slider-dot" data-slide="4"></div>
+              <div class="slider-dot" data-slide="5"></div>
+
+            </div>
           </div>
         </div>
       </div>
-      <div class="slider-nav">
-        <div class="slider-dot" data-slide="0"></div>
-        <div class="slider-dot" data-slide="1"></div>
-        <div class="slider-dot" data-slide="2"></div>
-      </div>
-    </div>
-  </div>
-</div>
+      
+      
 
 
 
