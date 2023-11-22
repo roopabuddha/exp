@@ -76,39 +76,6 @@ $(document).ready(function() {
   showSlide(currentSlide);
   startAutoSlide();
 });
-</script> -->
-
-<script>
-$(document).ready(function() {
-  let currentSlide = 0;
-  const slides = $('.slide-');
-  const dots = $('.slider-dot');
-
-  function showSlide(slideIndex) {
-    slides.hide();
-    slides.eq(slideIndex).show();
-    dots.removeClass('active');
-    dots.eq(slideIndex).addClass('active');
-  }
-
-  function nextSlide() {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-  }
-
-  function startAutoSlide() {
-    setInterval(nextSlide, 5000); // Auto-slide every 5 seconds
-  }
-
-  dots.on('click', function() {
-    currentSlide = $(this).data('slide-');
-    showSlide(currentSlide);
-  });
-
-  showSlide(currentSlide);
-  startAutoSlide();
-});
-</script>
 
 
     <script
@@ -476,6 +443,7 @@ a {
 
     // Initialize the first slide
     showSlide(currentSlide);
+    startAutoSlide();
 });
 
     </script>
